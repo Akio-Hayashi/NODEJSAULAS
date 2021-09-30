@@ -10,6 +10,8 @@ const clienteRouter = require('./routes/site/clienteRouter')
 const produtoRouter = require('./routes/site/produtoRouter')
 const clientesRouterAPI = require('./routes/api/clientesRouterAPI')
 const produtosRouterAPI = require('./routes/api/produtosRouterAPI')
+const fornecedorRouter = require('./routes/site/fornecedorRouter')
+const fornecedorRouterAPI = require('./routes/api/fornecedorRouterAPI')
 
 // Dados Mock
 global.produtos = [
@@ -22,6 +24,12 @@ global.clientes = [
     {id: 1, nome: 'Eduardo'},
     {id: 2, nome: 'Henrique'},
     {id: 3, nome: 'Akio'}
+]
+
+global.fornecedores = [
+    {id: 1, nome: 'Huawei'},
+    {id: 2, nome: 'AMD'},
+    {id: 3, nome: 'Intel'}
 ]
 
 // Configurações
@@ -49,6 +57,7 @@ app.use('/park-henri/clientes', clienteRouter);
 app.use('/park-henri/produtos', produtoRouter);
 app.use('/api/clientes', clientesRouterAPI);
 app.use('/api/produtos', produtosRouterAPI);
+app.use('/api/fornecedores', fornecedoresRouterAPI);
 
 app.get("/", (req, res)=>{
     res.redirect('/park-henri')
